@@ -1,0 +1,79 @@
+/* .menu {
+    display: flex;
+    justify-content: space-between;
+    background-color: aqua;
+    width: 30%;
+    height: 30%;
+}
+div>.nav {
+    background-color: bisque;
+    width: 100vw;
+    height: 100vh;
+}
+* {
+    margin: 0;
+    padding: 0;
+    background-color: red;
+}
+li {
+    list-style: none;
+} */
+
+
+
+/* Reset some default styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Basic page styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+/* Navbar container */
+.nav {
+    background-color: #333;
+    padding: 10px 0;
+}
+
+/* Flexbox layout for the menu */
+.menu {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+/* Styling for each menu item */
+.item {
+    color: white;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.item:hover {
+background-color: #555;
+}
+
+/* Active state for items (if needed) */
+.item.active {
+    background-color: #007BFF;
+}
+
+/* Responsive styling for mobile */
+@media (max-width: 768px) {
+    .menu {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .item {
+        padding: 12px 20px;
+        width: 100%;
+        text-align: center;
+    }

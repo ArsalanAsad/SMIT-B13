@@ -1,0 +1,8 @@
+p {
+    border-width: 2px;
+    border-color: black;
+}
+p.twelve {
+    border-width: thick;}
+p.thirteen {
+    border-width: 1px 4px 12px 4px;}

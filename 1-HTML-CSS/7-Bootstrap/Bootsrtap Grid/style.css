@@ -1,0 +1,86 @@
+.col
+.col-6, .col-8 {
+    border: solid 1px;
+    padding: 10px;
+    background-color: #f3d2d2;
+}
+
+.row {
+    margin-bottom: 20px;
+}
+
+.container {
+    background-color: yellow;
+    border: 2px solid;
+}
+
+/* Global Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+/* Hero Section */
+.hero {
+    background-image: url('https://via.placeholder.com/1920x600?text=Bookstore+Hero');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 100px 0;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.hero p {
+    font-size: 1.5rem;
+}
+
+.hero .btn {
+    font-size: 1.2rem;
+    padding: 10px 30px;
+}
+
+/* Book Section */
+.card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.card-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.card-text {
+    font-size: 1rem;
+    color: #555;
+}
+
+.card .btn {
+    font-size: 1rem;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+}
+
+footer a {
+    color: #ffcc00;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}

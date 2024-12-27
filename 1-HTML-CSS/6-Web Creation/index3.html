@@ -1,0 +1,202 @@
+Third Code
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shades of Pink</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo">●</div>
+        <ul class="menu">
+            <li><a href="#">Picker</a></li>
+            <li><a href="#">Convert</a></li>
+            <li><a href="#">Chart</a></li>
+            <li><a href="#">Names</a></li>
+            <li><a href="#">Library</a></li>
+            <li><a href="#">Tutorials</a></li>
+            <li><a href="#">Resources</a></li>
+            <li><a href="#">Font Generator</a></li>
+        </ul>
+    </header>
+    <main>
+        <section class="color-header">
+            <div class="color-display" style="background-color: #FF5733;"></div>
+            <div class="color-values">
+                <p><span>HEX</span> #FF5733</p>
+                <p><span>RGB</span> 255, 87, 51</p>
+                <p><span>HSL</span> 11, 80%, 60%</p>
+            </div>
+        </section>
+        <section class="content">
+            <h1>Shades of Pink</h1>
+            <p>
+                All shades of pink are themselves variations on pale red, but they’re numerous
+                and distinct all on their own. Pink is an incredibly popular color in both fashion
+                and interior design, and is frequently re-imagined. Some common shades of pink
+                are hot pink, rose pink, coral pink, and salmon pink.
+            </p>
+        </section>
+        <section class="shade-list">
+            <h2>List of Pink Shades</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Color</th>
+                        <th>Name</th>
+                        <th>HEX Code</th>
+                        <th>RGB Code</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="background-color: #9F2B68;"></td>
+                        <td>Amaranth</td>
+                        <td>#9F2B68</td>
+                        <td>rgb(159, 43, 104)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+</body>
+</html>
+
+
+
+/* Reset styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+.navbar .logo {
+    font-size: 24px;
+    color: red;
+    font-weight: bold;
+}
+
+.navbar .menu {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.navbar .menu li a {
+    text-decoration: none;
+    color: #555;
+    font-size: 0.9rem;
+}
+
+/* Color Header */
+.color-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: white;
+    margin: 20px auto;
+    max-width: 800px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.color-display {
+    width: 60px;
+    height: 60px;
+    border-radius: 5px;
+    margin-right: 20px;
+}
+
+.color-values {
+    display: flex;
+    gap: 20px;
+}
+
+.color-values p {
+    font-size: 0.9rem;
+    color: #444;
+}
+
+.color-values span {
+    font-weight: bold;
+    color: #FF5733;
+}
+
+/* Main Content */
+.content {
+    max-width: 800px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.content h1 {
+    font-size: 2rem;
+    color: #444;
+    margin-bottom: 10px;
+}
+
+.content p {
+    font-size: 1rem;
+    color: #666;
+}
+
+/* Shades List */
+.shade-list {
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.shade-list h2 {
+    font-size: 1.5rem;
+    color: #FF5733;
+    margin-bottom: 10px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+table th,
+table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+table th {
+    background-color: #f3f3f3;
+    color: #555;
+    font-size: 0.9rem;
+}
+
+table td:first-child {
+    width: 50px;
+}
+

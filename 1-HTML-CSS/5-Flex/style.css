@@ -1,0 +1,31 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    background-color: aqua;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+    width: 50%;
+}
+
+div.item1 {
+    background-color: blue;
+    color: white;
+    height: 50%;
+}
+
+div.item2 {
+    background-color: red;
+    color: white;
+    height: 40%;
+}
+
+div.item3 {
+    background-color: green;
+    color: white;
+    height: 30%;
+}
