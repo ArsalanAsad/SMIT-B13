@@ -452,7 +452,7 @@ var numbers = [5, 4, 5, 9, 1, 0, 5, 6, 1, 7, 3, 4]
 // console.clear()
 
 //....BILL CALCULATION
-const bill =  12.9999999999
+const bill =  12.33333333333333333
 //const roundedBill = Math.round(bill)
 //console.log(roundedBill)
 // const cieledBill = Math.ceil(bill)
@@ -467,6 +467,6 @@ const bill =  12.9999999999
 // console.log(randomeNumber, randomeNumber.toFixed(2))
 
 //.. DATE
-const date = new Date()
-document.write(date)
-console.log(date, "===date")
+ const date = new Date()
+ document.write(date)
+ console.log(date, "===date")

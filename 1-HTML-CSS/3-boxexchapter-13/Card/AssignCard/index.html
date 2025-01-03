@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: left;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .card :hover {
+            transform: translateY(-10);
+        }
+
+        .card-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .cardbody {
+            padding: 3px;
+        }
+
+        .cardtitle {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .carddescription {
+            font-size: 1.0rem;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 600px) {
+            .card {
+                width: 90%;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="card">
+        <img src="image1.PNG" alt="cardimage">
+        <div class="cardbody">
+            <h2 class="cardtitle">Lizard</h2>
+            <p class="carddescription">Lizard are wide spread group of squamate reptiles, with over 6,000 species,
+                ranging across all continents exept Antarctica.</p>
+        </div>
+    </div>
+</body>
+
+</html>
