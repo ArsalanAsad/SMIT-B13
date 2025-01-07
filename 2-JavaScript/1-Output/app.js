@@ -339,7 +339,7 @@ var newArray = [0, 1, 3, 4, 5, 6, 7, 8, 9]
 // console.log(resultInNum, typeof resultInNum) // can convert string to number with and without decimal
 
 //....Use Case of FOR LOOPS
-var students = ["Nasir", "Jamshed", "Saeed", "Ajmal", "Kamran", "Gulam"]
+// var students = ["Nasir", "Jamshed", "Saeed", "Ajmal", "Kamran", "Gulam"]
 //   var iteration = 0
 //  console.log(students[iteration])
 
@@ -360,7 +360,7 @@ var students = ["Nasir", "Jamshed", "Saeed", "Ajmal", "Kamran", "Gulam"]
 //     console.log(students[i])
 // }
 
-var numbers = [5, 4, 5, 9, 1, 0, 5, 6, 1, 7, 3, 4]
+// var numbers = [5, 4, 5, 9, 1, 0, 5, 6, 1, 7, 3, 4]
 
 // for (var i = 0; i < numbers.length; i++) {
 //     if (numbers[i] == 0) {
@@ -370,8 +370,8 @@ var numbers = [5, 4, 5, 9, 1, 0, 5, 6, 1, 7, 3, 4]
 //      console.log(numbers[i])
 // }
 
- var shops = ["gulkhan", "Allahwali", "jawednihari", "motiwala", "nagori"]
- var pocketMoney = 0
+// var shops = ["gulkhan", "Allahwali", "jawednihari", "motiwala", "nagori"]
+// var pocketMoney = 0
 
 //  for (var i = 0; i < shops.length; i++) {
 //      if (shops[i] == "jawednihari") {
@@ -404,12 +404,12 @@ var numbers = [5, 4, 5, 9, 1, 0, 5, 6, 1, 7, 3, 4]
 // var answer = "hELLO"
 //  console.log(answer, answer.toLowerCase())
 //  console.log(answer, answer.toUpperCase())
- 
- //..... VAR, LET, CONST
+
+//..... VAR, LET, CONST
 //  var a = 1
 //  var b = 2
 //  var a = 3
- 
+
 //  let c = 1
 //  let g = 2
 //  c = 3
@@ -419,7 +419,7 @@ var numbers = [5, 4, 5, 9, 1, 0, 5, 6, 1, 7, 3, 4]
 
 //  console.log(c)
 
- // var : re-declare, re-assign
+// var : re-declare, re-assign
 // let : not re-declare, re-assign
 // const : not re-declare, not re-assign
 
@@ -452,7 +452,7 @@ var numbers = [5, 4, 5, 9, 1, 0, 5, 6, 1, 7, 3, 4]
 // console.clear()
 
 //....BILL CALCULATION
-const bill =  12.33333333333333333
+const bill = 12.33333333333333333
 //const roundedBill = Math.round(bill)
 //console.log(roundedBill)
 // const cieledBill = Math.ceil(bill)
@@ -467,6 +467,97 @@ const bill =  12.33333333333333333
 // console.log(randomeNumber, randomeNumber.toFixed(2))
 
 //.. DATE
- const date = new Date()
- document.write(date)
- console.log(date, "===date")
+//  const date = new Date()
+//  document.write(date)
+//  console.log(date, "===date")
+
+//   const date = new Date()
+// console.log(Date.now()) //calculate milliseconds
+
+// console.log (date, "===date")
+// console.log (date.getDay(), "===day")
+// console.log (date.getMonth(), "===month")
+// console.log (date.getDate(), "===date")
+// console.log (date.getFullYear(), "===year")
+// console.log (date.getHours(), "===hours")
+// console.log (date.getMinutes(), "===minutes")
+// console.log (date.getSeconds(), "===seconds")
+// console.log (date.getMilliseconds(), "====milliseconds")
+// console.log (date.getTime(), "===miliseconds")
+// console.log (date.getDate(), "===date of the day")
+// console.log (date.toDateString(), "===give name month and dsy")
+// console.log (date.toTimeString(), "give time in readable manner")
+// console.log (date.toString(), "give date and time together in readable manner")
+// console.log (Date.now(), "===date")
+
+//CALCULATIONS FOR NUMBER OF DAYS.
+// const newDate = new Date("October 07, 2035")
+// const currentDate = new Date ()
+// console.log(parseInt((newDate.getTime()-currentDate.getTime())/1000/60/60/24),"===newDate")
+
+//CALCULATION FOR GETTING FUTURE OR PAST DATE ON SPECIFIC DAY AND AT SPECIFIC TIME
+// const newDate = new Date()
+// newDate.setFullYear(2029)
+// newDate.setMonth(2)
+// newDate.setDate(1)
+// console.log(newDate)
+
+
+// const myObj = {
+//     name: "Ahmed",
+//     age: 25,
+//     gender: "male",
+// }
+
+// console.log(myObj)
+// console.log(myObj.name)
+// console.log(myObj["name"])
+// console.log(myObj.age)
+// console.log(myObj.gender)
+
+
+//FUNCTION CREATION
+//  function greet () {
+//      let num1 = 0;
+//      const name = prompt("enter your name");
+//      const greet = "Welcome" + name;
+//      console.log(greet);
+//      num1++;
+//      console.log(num1);
+//  }
+// greet()
+
+// const consoles = {
+//      log: function () {
+//          console.log("Hi")
+//      }
+// }
+// consoles.log()
+
+// function fareed (firstNum, secondNum) {
+//     const result = firstNum * secondNum
+   // console.log(result)
+    //return result
+    // console.log(result)
+//}
+// fareed()
+
+// const one = 1
+// const sumResult = fareed (one, 3)
+// const sumResult1 = fareed (5, 9)
+// const sum3 = fareed (0, 0)
+// console.log(sumResult, sumResult1, sum3, "===result" )
+
+ const myArr = [0, 1, 2, 4, 6]
+ const returned = myArr.pop()
+ const newReturned = myArr.push(8)
+ const consoleLog = console.log (
+     "abc"
+ )
+ console.log(myArr, returned, newReturned, consoleLog)
+
+// // const myFunc = function () { }
+// IIFE
+// (function(){
+//     console.log("run");
+// })()
