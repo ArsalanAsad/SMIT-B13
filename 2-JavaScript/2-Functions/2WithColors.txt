@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Next Birthday Day Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Next Birthday Day Calculator</h1>
+        <form id="birthdayForm">
+            <label for="birthDay">Day:</label>
+            <input type="number" id="birthDay" name="birthDay" min="1" max="31" required>
+            
+            <label for="birthMonth">Month:</label>
+            <input type="number" id="birthMonth" name="birthMonth" min="1" max="12" required>
+            
+            <label for="birthYear">Year:</label>
+            <input type="number" id="birthYear" name="birthYear" min="1900" max="2100" required>
+
+            <button type="button" onclick="calculateNextBirthday()">Submit</button>
+        </form>
+        
+        <div id="result"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+---CSS
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    transition: background-color 1s ease-in-out;  /* Smooth transition for background color */
+}
+
+.container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin: 10px 0 5px;
+}
+
+input {
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+#result {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 18px;
+}
+
+
+
+---JAVA SCRIPT
+// Function to calculate the next birthday and change background color
+function calculateNextBirthday() {
+    // Get user inputs
+    const birthDay = document.getElementById('birthDay').value;
+    const birthMonth = document.getElementById('birthMonth').value - 1; // Months are 0-indexed in JavaScript
+    const birthYear = document.getElementById('birthYear').value;
+
+    if (!birthDay || !birthMonth || !birthYear) {
+        alert('Please fill in all fields');
+        return;
+    }
+
+    // Create a date object for the next birthday
+    let currentDate = new Date();
+    let nextBirthday = new Date(birthYear, birthMonth, birthDay);
+
+    // If next birthday is before today's date, increment the year
+    if (nextBirthday < currentDate) {
+        nextBirthday.setFullYear(nextBirthday.getFullYear() + 1);
+    }
+
+    // Get day name (like Monday, Tuesday etc.)
+    const dayNames = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    const dayName = dayNames[nextBirthday.getDay()];
+
+    // Format the date to include full date
+    const formattedDate = nextBirthday.toLocaleDateString('en-US', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+    });
+
+    // Show the result
+    const resultDiv = document.getElementById('result');
+    resultDiv.innerHTML = `Your next birthday will be on <strong>${dayName}</strong>, ${formattedDate}.`;
+
+    // Call the function to change the background color
+    changeBackgroundColor();
+}
+
+// Function to change the background color randomly
+function changeBackgroundColor() {
+    const colors = [
+        '#FF5733', '#33FF57', '#3357FF', '#F5B041', '#8E44AD', '#1ABC9C', '#E74C3C', '#F39C12'
+    ];
+    const randomColor = colors[Math.floor(Math.random() * colors.length)];
+    document.body.style.backgroundColor = randomColor;
+}

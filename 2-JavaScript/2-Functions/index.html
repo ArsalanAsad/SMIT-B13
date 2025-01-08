@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Birthday Calculator</h1>
+        <form id="birthdayForm">
+            <label for="birthDay">Day:</label>
+            <input type="number" id="birthDay" name="birthDay" min="1" max="31" required>
+
+            <label for="birthMonth">Month:</label>
+            <input type="number" id="birthMonth" name="birthMonth" min="1" max="12" required>
+
+            <label for="birthYear">Year:</label>
+            <input type="number" id="birthYear" name="birthYear" min="1900" max="2100" required>
+
+            <button type="button" onclick="calculateNextBirthday()">Submit</button>
+        </form>
+        <div id="result"></div>
+    </div>
+
+    
+
+    <script src="script.js"></script>
+</body>
+
+</html>
