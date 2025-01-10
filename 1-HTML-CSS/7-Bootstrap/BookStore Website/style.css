@@ -1,0 +1,10 @@
+.logo-container {
+    position: absolute;
+    top: 65px;
+    left: 0px;
+}
+
+.logo-container img {
+    max-width: 100px;
+    height: auto;
+}
