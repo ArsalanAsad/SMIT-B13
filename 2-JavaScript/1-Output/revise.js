@@ -77,8 +77,65 @@
 // console.log(date.getMinutes())
 // console.log(date.getHours())
 
-const bdDate = new Date("6 Dec 2025");
-bdDate.setFullYear("2026");
-bdDate.setMonth("");
+// const bdDate = new Date("6 Dec 2025");
+// bdDate.setFullYear("2026");
+// bdDate.setMonth("");
 
-console.log(bdDate)
+// console.log(bdDate)
+
+// console.log(date.getHours());
+// console.log(date.getMilliseconds());
+
+// console.log(typeof date);
+
+// scope
+// block-scope vs function scope
+// while loop
+// do-while loop
+// swith case
+
+// const studentMarks = prompt('enter your number') 
+// switch (+studentMarks) {
+//     case 50:
+//         console.log("fail") 
+//         break
+//     case 70:
+//         console.log("promoted")
+//         break
+//     case 100:
+//         console.log("top")
+//         break
+//     default:
+//         console.log("not eligible")
+// }
+
+// let age = 24
+// console.log(age);
+
+// function Name() {
+//     let age = 24
+//     console.log(age)
+//     console.log(age)
+//     let sum = 20
+//     console.log(sum)
+//     if (true) {
+//         var One = "fareed"
+//     }
+//     console.log(One)
+// }
+// Name()
+// console.log(One)
+
+// let f = 1
+
+// while (f < 10) {
+//     console.log(f)
+//     f++
+// }
+
+let ii = 0
+
+do { 
+    console.log(ii)
+    ii++
+} while (ii < 10)

@@ -548,13 +548,13 @@ const bill = 12.33333333333333333
 // const sum3 = fareed (0, 0)
 // console.log(sumResult, sumResult1, sum3, "===result" )
 
- const myArr = [0, 1, 2, 4, 6]
- const returned = myArr.pop()
- const newReturned = myArr.push(8)
- const consoleLog = console.log (
-     "abc"
- )
- console.log(myArr, returned, newReturned, consoleLog)
+//  const myArr = [0, 1, 2, 4, 6]
+//  const returned = myArr.pop()
+//  const newReturned = myArr.push(8)
+//  const consoleLog = console.log (
+//      "abc"
+//  )
+//  console.log(myArr, returned, newReturned, consoleLog)
 
 // // const myFunc = function () { }
 // IIFE
