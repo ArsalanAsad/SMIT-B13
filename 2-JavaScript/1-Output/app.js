@@ -561,3 +561,37 @@ const bill = 12.33333333333333333
 // (function(){
 //     console.log("run");
 // })()
+
+// function foo (a, b, c, ...d) {
+// console.log (a, b, c)
+// for (let i = 0; i < d.length; i++) {
+//    console.log(d[i])
+// }
+// return 1
+// }
+
+// //const one = foo(1,2,3,4)
+// foo(1, 2, 3, 4, 5, 6, 7)
+// console.log(foo)
+// d.splice(1,1,"a","b","c")
+// console.log(foo)
+
+function foo(a, b, c, ...d) {
+   console.log(a, b, c); // Logs the first three arguments
+   for (let i = 0; i < d.length; i++) {
+       console.log(d[i]); // Logs the rest of the arguments in 'd'
+   }
+   
+   // Modify the 'd' array in place
+   d.splice(1, 1, "a", "b", "c");
+   
+   console.log("Modified d:", d); // Logs the modified 'd' array
+   
+   return 1;
+}
+
+// Calling the foo function with arguments
+foo(1, 2, 3, 4, 5, 6, 7);
+
+// The 'd' array is modified within the foo function, so there is no need for a separate `splice` outside
+// The splice operation on `d` happens inside the function itself.

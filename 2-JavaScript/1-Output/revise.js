@@ -133,9 +133,84 @@
 //     f++
 // }
 
-let ii = 0
+// let ii = 0
 
-do { 
-    console.log(ii)
-    ii++
-} while (ii < 10)
+// do { 
+//     console.log(ii)
+//     ii++
+// } while (ii < 10)
+
+// let allAllocated = false
+// let currentNumber = 1
+// let sum = 0
+
+// while (allAllocated === false) {
+//     currentNumber++
+//     const isPrimeNumber = false
+//     if (isPrimeNumber) sum += currentNumber
+//     //find out and add prime number
+//     if (sum >= 100) allAllocated = true
+// }
+
+// let allAllocated = false;
+// let currentNumber = 1;
+// let sum = 0;
+
+// while (!allAllocated) {
+//     currentNumber++;
+    
+//     // Check if currentNumber is prime
+//     let isPrimeNumber = true;
+    
+//     for (let i = 2; i <= Math.sqrt(currentNumber); i++) {
+//         if (currentNumber % i === 0) {
+//             isPrimeNumber = false;
+//             break;
+//         }
+//     }
+
+//     if (isPrimeNumber && currentNumber > 1) {
+//         sum += currentNumber;
+//     }
+    
+//     // Check if the sum of prime numbers is greater than or equal to 100
+//     if (sum >= 100) {
+//         allAllocated = true;
+//     }
+// }
+
+// console.log("Sum of prime numbers:", sum);
+
+let allAllocated = false;
+let currentNumber = 1;
+let sum = 0;
+let primes = []; // Array to store prime numbers
+
+while (!allAllocated) {
+    currentNumber++;
+    
+    // Check if currentNumber is prime
+    let isPrimeNumber = true;
+    
+    for (let i = 2; i <= Math.sqrt(currentNumber); i++) {
+        if (currentNumber % i === 0) {
+            isPrimeNumber = false;
+            break;
+        }
+    }
+
+    if (isPrimeNumber && currentNumber > 1) {
+        sum += currentNumber;
+        primes.push(currentNumber); // Add the prime number to the array
+    }
+    
+    // Check if the sum of prime numbers is exactly 100
+    if (sum >= 100) {
+        allAllocated = true;
+    }
+}
+
+// Output the results
+console.log("Prime numbers:", primes);
+console.log("Sum of prime numbers:", sum);
+
