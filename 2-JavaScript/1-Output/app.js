@@ -63,8 +63,8 @@
 
 
 //operators
-var firstNum = 5
-var secondNum = 10
+// var firstNum = 5
+// var secondNum = 10
 
 // firstNum = firstNum + secondNum
 // console.log (firstNum)
@@ -125,8 +125,8 @@ var secondNum = 10
 // var addedAge = age + 2
 // console.log(addedAge)
 
-var a = 1
-var b = 2
+// var a = 1
+// var b = 2
 
 // CONDITION CHECKS
 // console.log(a === b)
@@ -141,7 +141,7 @@ var b = 2
 
 //  console.log(newSalary !== mySalary, "salary")
 
-var result = a > b
+// var result = a > b
 
 // var role = prompt ("enter your role")
 
@@ -292,7 +292,7 @@ var result = a > b
 // console.log(students)
 
 //SLICE BREAK ARRAY AS START AND END POINT GIVEN AND COPY ARRAY (END NOT INCLUDE IN THE ARRAY)
-var newArray = [0, 1, 3, 4, 5, 6, 7, 8, 9]
+// var newArray = [0, 1, 3, 4, 5, 6, 7, 8, 9]
 // var slicedArr = newArray.slice (1, 9)
 // console.log (newArray, slicedArr) 
 // var slicedArr = newArray.slice(1, 6)
@@ -452,7 +452,7 @@ var newArray = [0, 1, 3, 4, 5, 6, 7, 8, 9]
 // console.clear()
 
 //....BILL CALCULATION
-const bill = 12.33333333333333333
+// const bill = 12.33333333333333333
 //const roundedBill = Math.round(bill)
 //console.log(roundedBill)
 // const cieledBill = Math.ceil(bill)
@@ -471,7 +471,7 @@ const bill = 12.33333333333333333
 //  document.write(date)
 //  console.log(date, "===date")
 
-   const date = new Date()
+   // const date = new Date()
 // console.log(Date.now()) //calculate milliseconds
 
 // console.log (date, "===date")
@@ -562,36 +562,150 @@ const bill = 12.33333333333333333
 //     console.log("run");
 // })()
 
-// function foo (a, b, c, ...d) {
-// console.log (a, b, c)
-// for (let i = 0; i < d.length; i++) {
-//    console.log(d[i])
+//  function foo(a, b, c, ...d) {
+//      console.log(a, b, c);
+//     for (let i = 0; i < d.length; i++) {
+//          console.log(d[i]);
+//      }
+//      return 1
+//    }
+//    const one = foo(1, 2, 3, 4)
+//    foo(1, 2, 3, 4, 5, 6)
+//    console.log ([1,2].splice(1, 1, "a", "b", "c"))
+
+// var a = 1
+// function myfoo () {
+//    var a = 2
+//    console.log(a);
 // }
-// return 1
+// function myfoo2() {
+//    console.log(a)
+// }
+// myfoo();
+// myfoo2();
+
+// function foo () {
+//    const b = 2
+//    if (b === 2) {
+//       var a = 1
+//       console.log(a)
+//    }
+//    console.log(a)
+// }
+// function foo2 () { 
+//    const b = 2
+//    if (b === 2) {
+//       let a = 1
+//       console.log(a)
+//    }
+//    console.log(a)
+// }
+// foo ();
+// foo2 ();
+
+// var a = 1 
+// function fooScope () {
+//    var bScope = 1
+//    if (bScope === 1) {
+//       var b = 5
+//    }
+//    console.log(b)
+// }
+// fooScope ();
+// console.log(a);
+// console.log(bScope);
+
+// function blockScoped () {
+//    let b = 2
+//    if (b === 2) {
+//       let c = 1
+//    }
+//    console.log(c);
+// }
+// blockScoped ();
+
+//  let num = 1
+//  const day = +prompt("Enter Day", num)
+//  const excercise = ["Chest", "Back", "Shoulder", "Biceps", "Abs", "Legs", "Rest"]
+// // //console.log(excercise [day - num]);
+
+// if (day === 1) {
+// } else if (day === 2) {
+// } else if (day === 3) {
+// } else if (day === 4) {
+// } else if (day === 5) {
+// } else if (day === 6) {
+// } else if (day === 7) {
+// }
+// console.log(excercise[day-num])
+
+// switch (day) {
+//    case 1:
+//       console.log("Chest")
+//       break
+//    case 2:
+//       console.log("Back")
+//       break
+//    case 3:
+//       console.log("Shoulder")
+//       break
+//    case 4:
+//       console.log("Biceps")
+//       break
+//    case 5:
+//       console.log("Abs")
+//       break
+//    case 6:
+//       console.log("Legs")
+//       break
+//    case 7: 
+//       console.log("Rest")
+//       break
+//    default:
+//       console.log("Cardio")
+//       break
 // }
 
-// //const one = foo(1,2,3,4)
-// foo(1, 2, 3, 4, 5, 6, 7)
-// console.log(foo)
-// d.splice(1,1,"a","b","c")
-// console.log(foo)
+// let condition = true
+// let a = 1
+// condition = a > 10
+// while (condition) {
+//    console.log("running")
+//    condition =  false
+// }
 
-function foo(a, b, c, ...d) {
-   console.log(a, b, c); // Logs the first three arguments
-   for (let i = 0; i < d.length; i++) {
-       console.log(d[i]); // Logs the rest of the arguments in 'd'
-   }
-   
-   // Modify the 'd' array in place
-   d.splice(1, 1, "a", "b", "c");
-   
-   console.log("Modified d:", d); // Logs the modified 'd' array
-   
-   return 1;
+// do {
+//    console.log("runnning")
+//    condition = a > 10
+// } while (condition)
+
+// function showName () {
+//    alert ("Hi, what's your name?")
+// }
+// showName()
+
+// splice (index,numberOfElements,...insertElements)
+
+// arr = [0, 1, 2, 3, 4]
+// console.log(arr)
+// for (let i = 0; i<3; i++) {
+//    arr.pop()
+//    console.log(arr)
+// }
+
+// const pakElement = document.getElementById('pak')
+// console.log(pakElement.innerHTML) 
+
+// pakElement.innerHTML = "Ind"
+// pakElement.style.backgroundColor = "red"
+// pakElement.style.display= "none"
+
+// const myObj = {a:1}
+// myObj.a = 2
+
+let fName = Hafeez
+let lName = Akbar
+function clickMe (fName, lName) {
+   console.log("my name is", fName,lName)
 }
-
-// Calling the foo function with arguments
-foo(1, 2, 3, 4, 5, 6, 7);
-
-// The 'd' array is modified within the foo function, so there is no need for a separate `splice` outside
-// The splice operation on `d` happens inside the function itself.
+clickMe()
