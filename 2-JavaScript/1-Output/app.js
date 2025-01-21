@@ -703,9 +703,41 @@
 // const myObj = {a:1}
 // myObj.a = 2
 
-let fName = Hafeez
-let lName = Akbar
 function clickMe (fName, lName) {
    console.log("my name is", fName,lName)
 }
-clickMe()
+
+function focusMe () {
+   console.log("Input is in focus")
+}
+function blurMe () {
+   console.log("Input is in blurred state")
+}
+
+const inputBox = document.getElementById("myInput")
+function submit() {
+   console.log(inputBox.value)
+}
+
+function restFunction(a, b, ...c) {
+   console.log("Test Function", a, b, c)
+}
+restFunction("Hello", "world", "test", "test2" )
+
+function sum (...a) {
+   let sum = 0
+   for (i = 0; i < 0; i++) {
+   sum = sum + a [i]
+   }
+   return sum
+}
+console.log(sum(5, 15, 30, 15, 4))
+
+function setValue () {
+   inputBox.value = "Hello", "World"
+}
+
+function expandText () {
+   const para = document.getElementById("text")
+   para.innerText+=" test para"
+}

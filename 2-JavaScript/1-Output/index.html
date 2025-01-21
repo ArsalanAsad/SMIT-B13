@@ -8,7 +8,31 @@
 <body>
     <p id="pak">this is javascript</p>
     <p id="demo">Sum</p>
-    <button>Submit</button>
+    
+
+    <a href="JavaScript:void(0)" onClick="clickMe()">Link</a>
+
+
+    <button onfocus="this.style.color = 'pink'" onClick='clickMe("nouman","fatta")'>Click Me</button>
+    <button onClick='clickMe("Adbullah","Motiwala")'>Click Me 2</button>
+
+
+    <p style="background-color: red;" onMouseOver='this.style.color="green"' onMouseLeave="this.style.color = 'white'"
+        onMouseDown="clickMe('hello','world')">Lorem ipsum dolor sit amet
+        consectetur adipisicing elit. Rerum neque rem eos quasi
+        nam, ea maxime omnis eum illo
+        libero! Est minima quaerat reprehenderit similique praesentium totam ab, accusamus sequi!</p>
+
+
+
+    <input value="test value" type="text" id="myInput" onFocus="focusMe()" onBlur="blurMe()">
+
+    <button onClick="submit()">Submit Value</button>
+    <button onClick="setValue()">Set Value</button>
+
+
+    <p id="text">hello world </p>
+    <button onClick="expandText()">Read more</button>
 
 
     <script src="app.js"></script>
