@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-800 flex justify-center items-center min-h-screen">
+    <div class="bg-black p-6 rounded-xl shadow-xl w-80">
+        <div id="hcd" class="bg-gray-900 text-white text-4xl p-4 text-right rounded-lg mb-6"></div>
+        <div class="grid grid-cols-4 gap-4">
+            <button class="bg-gray-700 text-white text-xl p-6 rounded-lg hover:bg-gray-600 active:bg-gray-500" onclick="writeOperation(7)">7</button>
+            <button class="bg-gray-700 text-white text-xl p-6 rounded-lg hover:bg-gray-600 active:bg-gray-500" onclick="writeOperation(8)">8</button>
+            <button class="bg-gray-700 text-white text-xl p-6 rounded-lg hover:bg-gray-600 active:bg-gray-500" onclick="writeOperation(9)">9</button>
+            <button class="bg-orange-600 text-white text-xl p-6 rounded-lg hover:bg-orange-500 active:bg-orange-400" onclick="writeOperation('/')">/</button>
+
+            <button class="bg-gray-700 text-white text-xl p-6 rounded-lg hover:bg-gray-600 active:bg-gray-500" onclick="writeOperation(4)">4</button>
+            <button class="bg-gray-700 text-white text-xl p-6 rounded-lg hover:bg-gray-600 active:bg-gray-500" onclick="writeOperation(5)">5</button>
+            <button class="bg-gray-700 text-white text-xl p-6 rounded-lg hover:bg-gray-600 active:bg-gray-500" onclick="writeOperation(6)">6</button>
+            <button class="bg-orange-600 text-white text-xl p-6 rounded-lg hover:bg-orange-500 active:bg-orange-400" onclick="writeOperation('*')">*</button>
+
+            <button class="bg-gray-700 text-white text-xl p-6 rounded-lg hover:bg-gray-600 active:bg-gray-500" onclick="writeOperation(1)">1</button>
+            <button class="bg-gray-700 text-white text-xl p-6 rounded-lg hover:bg-gray-600 active:bg-gray-500" onclick="writeOperation(2)">2</button>
+            <button class="bg-gray-700 text-white text-xl p-6 rounded-lg hover:bg-gray-600 active:bg-gray-500" onclick="writeOperation(3)">3</button>
+            <button class="bg-orange-600 text-white text-xl p-6 rounded-lg hover:bg-orange-500 active:bg-orange-400" onclick="writeOperation('-')">-</button>
+
+            <button class="bg-gray-700 text-white text-xl p-6 rounded-lg hover:bg-gray-600 active:bg-gray-500" onclick="writeOperation(0)">0</button>
+            <button class="bg-gray-700 text-white text-xl p-6 rounded-lg hover:bg-gray-600 active:bg-gray-500" onclick="clearAll()">AC</button>
+            <button class="bg-gray-700 text-white text-xl p-6 rounded-lg hover:bg-gray-600 active:bg-gray-500" onclick="clearLastValue()">C</button>
+            <button class="bg-orange-600 text-white text-xl p-6 rounded-lg hover:bg-orange-500 active:bg-orange-400" onclick="writeOperation('+')">+</button>
+
+            <button class="bg-green-600 text-white text-xl p-6 rounded-lg col-span-4 hover:bg-green-500 active:bg-green-400" onclick="performCalculation()">=</button>
+        </div>
+    </div>
+
+    <script src="calculator.js"></script>
+</body>
+</html>
