@@ -1,0 +1,204 @@
+/* * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f3f4f6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.container {
+    text-align: center;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    width: 300px;
+}
+
+header h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.scores {
+    font-size: 1rem;
+    margin-bottom: 20px;
+    color: #555;
+}
+
+.scores p {
+    margin: 10px 0;
+}
+
+.dice {
+    font-size: 3rem;
+    font-weight: bold;
+    margin: 20px 0;
+    color: #ff6347;
+    background-color: #fff;
+    border: 3px solid #ccc;
+    border-radius: 10px;
+    width: 100px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.dice :hover {
+    background-color: #f7f7f7;
+}
+
+.play-button {
+    padding: 15px;
+    font-size: 1.2rem;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.play-button :hover {
+    background-color: #45a049;
+}
+
+.play-button:focus {
+    outline: none;
+} */
+
+/* Global styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+}
+
+/* Body styling for game-like background */
+body {
+    background: radial-gradient(circle, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)), url('https://source.unsplash.com/1600x900/?casino,dice') no-repeat center center fixed;
+    background-size: cover;
+    color: #fff;
+}
+
+/* Container for centering everything */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+}
+
+/* Header styling */
+header {
+    margin-bottom: 30px;
+}
+
+header h1 {
+    font-size: 3.5rem;
+    color: #ffcc00;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.7);
+    margin-bottom: 20px;
+}
+
+.scores {
+    font-size: 1.5rem;
+    color: #ff9900;
+}
+
+.scores p {
+    margin: 5px 0;
+}
+
+.scores span {
+    font-weight: bold;
+    color: #fff;
+}
+
+/* Dice area with animation */
+.dice {
+    font-size: 7rem;
+    margin: 40px;
+    padding: 40px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    border: 3px solid #ffcc00;
+    width: 120px;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.dice:hover {
+    transform: scale(1.1);
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+/* Play Button Styling */
+.play-button {
+    font-size: 1.8rem;
+    padding: 20px 40px;
+    background-color: #ff6600;
+    border: none;
+    border-radius: 30px;
+    color: #fff;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.play-button:hover {
+    background-color: #ff3300;
+    transform: translateY(-5px);
+}
+
+.play-button:active {
+    transform: translateY(2px);
+}
+
+.play-button:focus {
+    outline: none;
+}
+
+/* Animation for the scores */
+.scores p {
+    opacity: 0;
+    animation: fadeIn 1s ease-in forwards;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* Media query for smaller devices */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2.5rem;
+    }
+
+    .dice {
+        font-size: 5rem;
+        width: 100px;
+        height: 100px;
+    }
+
+    .play-button {
+        font-size: 1.5rem;
+        padding: 15px 30px;
+    }
+}
