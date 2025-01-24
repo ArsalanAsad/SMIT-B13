@@ -1,0 +1,112 @@
+<div class="calculator">
+        <div id="hcd"></div>
+        <div class="button-row">
+            <button onclick="writeOperation (7)">7</button>
+            <button onclick="writeOperation (8)">8</button>
+            <button onclick="writeOperation (9)">9</button>
+            <button onclick="writeOperation ()">/</button>
+        </div>
+        <div class="button-row">
+            <button onclick="writeOperation (4)">4</button>
+            <button onclick="writeOperation (5)">5</button>
+            <button onclick="writeOperation (6)">6</button>
+            <button onclick="writeOperation ('*')">*</button>
+        </div>
+        <div class="button-row">
+            <button onclick="writeOperation (1)">1</button>
+            <button onclick="writeOperation (2)">2</button>
+            <button onclick="writeOperation (3)">3</button>
+            <button onclick="writeOperation ('-')">-</button>
+        </div>
+        <div class="button-row">
+            <button onclick="writeOperation (0)">0</button>
+            <button onclick="clearAll ()">AC</button>
+            <button onclick="clearLastValue ()">C</button>
+            <button onclick="writeOperation ('+')">+</button>
+        </div>
+        <div class="button-row">
+            <button onclick="performCalculation ()">=</button>
+        </div>
+    </div>
+
+
+
+CSS
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #333;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+.calculator {
+    background-color: #000;
+    border-radius: 10px;
+    padding: 20px;
+    width: 300px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+}
+#hcd {
+    background-color: #111;
+    color: white;
+    font-size: 2em;
+    height: 50px;
+    margin-bottom: 20px;
+    padding: 10px;
+    text-align: right;
+    border-radius: 5px;
+}
+button {
+    background-color: #222;
+    color: white;
+    font-size: 1.5rem;
+    width: 60px;
+    height: 60px;
+    border: none;
+    margin: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+button:hover {
+    background-color: #555;
+}
+button:active {
+    background-color: #777;
+}
+.button-row {
+    display: flex;
+    justify-content: space-between;
+}
+.button-row:last-child {
+    justify-content: space-around
+}
+
+
+
+JAVASCRIPT
+const hcd = document.querySelector ('#hcd')
+
+function writeOperation (newValue) {
+    const prevValue = hcd.innerHTML
+    hcd.innerHTML = prevValue + newValue
+}
+
+function performCalculation () {
+    const values = hcd.innerHTML
+    const result = eval(values)
+    hcd.innerHTML = result
+    console.log (result)
+}
+
+function clearAll () {
+    const defaultValue = ''
+    hcd.innerHTML = defaultValue
+}
+
+function clearLastValue () {
+    const lastValue = hcd.innerHTML
+    hcd.innerHTML = lastValue.slice(0, -1)
+}
