@@ -1,79 +1,118 @@
-// let alarmTime = null;
+HTML
 
-// const clockElement = document.getElementById('clock');
-// const setAlarmButton = document.getElementById('set-alarm-btn');
-// const resetButton = document.getElementById('reset-btn');
-// const alarmTimeInput = document.getElementById('alarm-time');
-// const alarmMessage = document.getElementById('alarm-message');
+   <div class="clock-container">
+          <div id="clock" class="clock"></div>
+          <div class="time-setter">
+              <label for="alarm-time" aria-label="Set Alarm Time">Set Alarm Time:</label>
+              <input type="time" id="alarm-time" aria-labelledby="alarm-time">
+              <button id="set-alarm-btn">Set Alarm</button>
+              <button id="reset-btn" aria-label="Clear Alarm">Clear Alarm</button>
+          </div>
+          <div id="alarm-message" class="message" role="alert"></div>
+      </div>
 
-// // Function to display the current time in 12-hour format with AM/PM
-// function updateClock() {
-//     const now = new Date();
-//     let hours = now.getHours();
-//     let minutes = now.getMinutes();
-//     let seconds = now.getSeconds();
-//     let ampm = hours >= 12 ? 'PM' : 'AM';
 
-//     // Convert to 12-hour format
-//     hours = hours % 12;
-//     hours = hours ? hours : 12; // the hour '0' should be '12'
-//     minutes = minutes < 10 ? '0' + minutes : minutes;
-//     seconds = seconds < 10 ? '0' + seconds : seconds;
+CSS
 
-//     clockElement.textContent = `${hours}:${minutes}:${seconds} ${ampm}`;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-//     // Check if current time matches the alarm time in 12-hour format
-//     if (alarmTime && formatTimeForComparison(now) === alarmTime) {
-//         alarmMessage.textContent = 'ALARM! Time to wake up!';
-//         alarmMessage.classList.add('show');
-//         const alarmSound = new Audio('australia.mp3'); // Replace with your sound
-//         alarmSound.play();
-//     } else {
-//         alarmMessage.classList.remove('show');
-//     }
-// }
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f7f7f7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
 
-// // Helper function to format time for alarm comparison (12-hour format)
-// function formatTimeForComparison(now) {
-//     let hours = now.getHours();
-//     let minutes = now.getMinutes();
-//     let ampm = hours >= 12 ? 'PM' : 'AM';
+.clock-container {
+    text-align: center;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    width: 300px;
+    transition: transform 0.3s ease;
+}
 
-//     // Convert to 12-hour format
-//     hours = hours % 12;
-//     hours = hours ? hours : 12; // the hour '0' should be '12'
-//     minutes = minutes < 10 ? '0' + minutes : minutes;
+.clock-container:hover {
+    transform: scale(1.05);
+}
 
-//     return `${hours}:${minutes} ${ampm}`;
-// }
+.clock {
+    font-size: 60px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+}
 
-// // Set alarm
-// setAlarmButton.addEventListener('click', () => {
-//     if (!alarmTimeInput.value) {
-//         alarmMessage.textContent = 'Please select a valid time.';
-//         alarmMessage.classList.add('show');
-//         return;
-//     }
+.time-setter {
+    margin-bottom: 20px;
+}
 
-//     alarmTime = alarmTimeInput.value;
-//     alarmMessage.textContent = `Alarm set for ${alarmTime}`;
-//     alarmMessage.classList.add('show');
-// });
+.time-setter input,
+button {
+    padding: 10px;
+    font-size: 16px;
+    margin-right: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 130px;
+}
 
-// // Reset alarm
-// resetButton.addEventListener('click', () => {
-//     alarmTime = null;
-//     alarmMessage.textContent = '';
-//     alarmMessage.classList.remove('show');
-//     alarmTimeInput.value = '';
-// });
+button {
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
 
-// // Update the clock every second
-// setInterval(updateClock, 1000);
+button:hover {
+    background-color: #45a049;
+}
 
-// // Initial clock update
-// updateClock();
+button:focus {
+    outline: none;
+    border: 2px solid #4CAF50;
+}
 
+#reset-btn {
+    background-color: #f44336;
+}
+
+#reset-btn:hover {
+    background-color: #e53935;
+}
+
+.message {
+    font-size: 18px;
+    color: #d9534f;
+    margin-top: 20px;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.message.show {
+    opacity: 1;
+}
+
+@media (max-width: 600px) {
+    .clock {
+        font-size: 50px;
+    }
+
+    .time-setter input,
+    button {
+        font-size: 14px;
+        width: 100px;
+    }
+}
+
+javaScript
 
 let alarmTime = null;
 
