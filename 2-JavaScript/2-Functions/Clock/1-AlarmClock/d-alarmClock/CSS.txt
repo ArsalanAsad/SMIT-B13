@@ -1,0 +1,106 @@
+/* Add these to previous styles */
+
+/* Repeat Options */
+.repeat-options {
+    display: flex;
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.repeat-options label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 8px;
+    background: rgba(108, 92, 231, 0.1);
+}
+
+/* Alarms List */
+.alarms-list {
+    width: 100%;
+    margin: 1rem 0;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.alarm-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    margin: 0.5rem 0;
+    background: rgba(108, 92, 231, 0.05);
+    border-radius: 10px;
+    animation: slideIn 0.3s ease;
+}
+
+.alarm-item.active {
+    background: rgba(108, 92, 231, 0.15);
+}
+
+.alarm-time {
+    font-weight: 600;
+}
+
+.alarm-meta {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.alarm-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.delete-btn {
+    color: #ff7675;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.delete-btn:hover {
+    color: #d63031;
+}
+
+.snooze-btn {
+    background: linear-gradient(135deg, #00b894, #55efc4);
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Sound Selector */
+.sound-selector {
+    display: flex;
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+/* Accessibility */
+:focus {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
