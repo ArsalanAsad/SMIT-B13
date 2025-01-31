@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipes Export</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+    <form action="/recipes/main" method="post" onsubmit="return validateForm(event)">
+        <h1 id="pageTitle">Syrve recipes export</h1>
+
+        <label for="syrveServer">Syrve server URL:</label>
+        <input type="text" id="syrveServer" name="syrveServer" placeholder="server-name.syrve.online" required="">
+        <div id="syrveServerError" class="error"></div>
+        
+        <label for="syrveLogin">Syrve login:</label>
+        <input type="text" id="syrveLogin" name="syrveLogin" placeholder="Enter Syrve login" required="">
+        
+        <label for="syrvePassword">Syrve password:</label>
+        <input type="password" id="syrvePassword" name="syrvePassword" placeholder="Enter Syrve password" required="">
+        
+        <button type="submit">Start</button>
+    </form>
+
+    <script src="app2.js"></script>
+</body>
+</html>

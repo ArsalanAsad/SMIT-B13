@@ -3,6 +3,8 @@
 // const ball = '<div class="point-ball"></div>'
 // gameArea.innerHTML = ball
 const ball = document.getElementById("ball")
+console.log(ball);
+
 
 // function getRandomNumber(){}
 const getRandomNumber = () => {
