@@ -9,7 +9,9 @@ console.log(ball);
 // function getRandomNumber(){}
 const getRandomNumber = () => {
     const generatedRandomNumber = Math.random()
+    console.log(generatedRandomNumber)
     const expectedNumber = Math.floor(generatedRandomNumber * 96)
+    console.log(expectedNumber)
     return expectedNumber
 }
 
