@@ -1,0 +1,21 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    transition: background-color 1s ease;
+}
+
+#time-icon {
+    font-size: 100px;
+    margin-bottom: 20px;
+}
+
+#clock {
+    font-size: 50px;
+    color: white;
+    text-shadow: 2px 2px 4px (0, 0, 0, 0.5);
+}
