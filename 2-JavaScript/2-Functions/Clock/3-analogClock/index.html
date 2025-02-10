@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: background 0.5s ease;
+        }
+
+        .clock {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            position: relative;
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .center {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: #333;
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 4;
+        }
+
+        .hour-mark {
+            position: absolute;
+            width: 2px;
+            height: 15px;
+            background: #333;
+            left: 50%;
+            transform-origin: bottom;
+        }
+
+        .number {
+            position: absolute;
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+            top: 50%;
+            left: 50%;
+            transform-origin: bottom;
+            transform: translate(-50%, -50%) rotate(0deg);
+        }
+
+        .hand {
+            position: absolute;
+            bottom: 50%;
+            left: 50%;
+            transform-origin: bottom;
+            background: #333;
+            border-radius: 3px;
+        }
+
+        .hour-hand {
+            width: 4px;
+            height: 60px;
+            margin-left: -2px;
+        }
+
+        .minute-hand {
+            width: 3px;
+            height: 80px;
+            margin-left: -1.5px;
+        }
+
+        .second-hand {
+            width: 2px;
+            height: 90px;
+            margin-left: -1px;
+            background: #e74c3c;
+            transition: transform 0.2s cubic-bezier(0.4, 2.3, 0.3, 1);
+        }
+    </style>
+</head>
+<body>
+    <div class="clock">
+        <div class="hour-hand hand"></div>
+        <div class="minute-hand hand"></div>
+        <div class="second-hand hand"></div>
+        <div class="center"></div>
+    </div>
+
+    <script>
+        const clock = document.querySelector('.clock');
+        const hourHand = document.querySelector('.hour-hand');
+        const minuteHand = document.querySelector('.minute-hand');
+        const secondHand = document.querySelector('.second-hand');
+        const body = document.body;
+
+        // Create hour marks and numbers
+        for (let i = 0; i < 12; i++) {
+            const mark = document.createElement('div');
+            mark.className = 'hour-mark';
+            mark.style.transform = `rotate(${i * 30}deg) translateX(-50%)`;
+            clock.appendChild(mark);
+
+            // Create numbers
+            const number = document.createElement('div');
+            number.className = 'number';
+            number.textContent = i === 0 ? 12 : i;  // Display 12 at the top
+            number.style.transform = `rotate(${i * 30}deg) translateY(-120px) rotate(${-i * 30}deg)`;
+            clock.appendChild(number);
+        }
+
+        function updateClock() {
+            const now = new Date();
+            // Convert to UTC+5
+            const utcHours = now.getUTCHours();
+            const utcMinutes = now.getUTCMinutes();
+            const utcSeconds = now.getUTCSeconds();
+            
+            const localHours = (utcHours + 5) % 24;
+            const minutes = utcMinutes;
+            const seconds = utcSeconds;
+
+            // Calculate rotations
+            const hourRotation = (localHours % 12) * 30 + minutes * 0.5;
+            const minuteRotation = minutes * 6 + seconds * 0.1;
+            const secondRotation = seconds * 6;
+
+            // Apply rotations
+            hourHand.style.transform = `rotate(${hourRotation}deg)`;
+            minuteHand.style.transform = `rotate(${minuteRotation}deg)`;
+            secondHand.style.transform = `rotate(${secondRotation}deg)`;
+
+            // Update background based on local time
+            const hourProgress = localHours / 24;
+            const bgAngle = hourProgress * 360;
+            
+            // Day/Night color interpolation
+            const dayColor = `hsl(195, 70%, ${50 + Math.sin(hourProgress * Math.PI) * 30}%)`;
+            const nightColor = `hsl(250, 70%, ${10 + Math.sin(hourProgress * Math.PI) * 10}%)`;
+            
+            body.style.background = `linear-gradient(${bgAngle}deg, ${dayColor}, ${nightColor})`;
+        }
+
+        // Initial update
+        updateClock();
+        // Update every second
+        setInterval(updateClock, 1000);
+    </script>
+</body>
+</html>
