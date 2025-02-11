@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(120deg, #1a1a1a, #4a4a4a);
+            transition: background 2s ease;
+        }
+
+        .clock-container {
+            position: relative;
+            width: 400px;
+            height: 400px;
+        }
+
+        .clock-face {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .number {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transform: rotate(var(--rotation));
+            font-size: 1.5rem;
+            color: white;
+        }
+
+        .hand {
+            --rotation: 0;
+            position: absolute;
+            bottom: 50%;
+            left: 50%;
+            transform-origin: bottom;
+            transform: translateX(-50%) rotate(calc(var(--rotation) * 1deg));
+            background-color: black;
+            border-radius: 5px;
+        }
+
+        .hour-hand {
+            width: 4px;
+            height: 25%;
+            background-color: #ffffff;
+        }
+
+        .minute-hand {
+            width: 3px;
+            height: 35%;
+            background-color: #cccccc;
+        }
+
+        .second-hand {
+            width: 2px;
+            height: 40%;
+            background-color: #ff4444;
+        }
+
+        .alarm-container {
+            position: absolute;
+            bottom: -60px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+        }
+
+        .center-dot {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 10px;
+            height: 10px;
+            background-color: #ff4444;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+<body>
+    <div class="clock-container">
+        <div class="clock-face">
+            <div class="center-dot"></div>
+            <div id="numbers"></div>
+            <div class="hand hour-hand" id="hour-hand"></div>
+            <div class="hand minute-hand" id="minute-hand"></div>
+            <div class="hand second-hand" id="second-hand"></div>
+        </div>
+        <div class="alarm-container">
+            <input type="time" id="alarm-time">
+            <button onclick="setAlarm()">Set Alarm</button>
+            <button onclick="stopAlarm()">Stop</button>
+        </div>
+    </div>
+
+    <script>
+        const body = document.querySelector('body');
+        const hourHand = document.getElementById('hour-hand');
+        const minuteHand = document.getElementById('minute-hand');
+        const secondHand = document.getElementById('second-hand');
+        const numbers = document.getElementById('numbers');
+        let alarmTime = null;
+        let alarmTimeout = null;
+
+        // Create clock numbers
+        for(let i = 1; i <= 12; i++) {
+            const number = document.createElement('div');
+            number.className = 'number';
+            number.style.setProperty('--rotation', `${i * 30}deg`);
+            number.innerHTML = `<span style="transform: rotate(-${i * 30}deg)">${i}</span>`;
+            numbers.appendChild(number);
+        }
+
+        function updateClock() {
+            const now = new Date();
+            const hours = now.getHours() % 12;
+            const minutes = now.getMinutes();
+            const seconds = now.getSeconds();
+            
+            // Update hands
+            const secondsDegrees = (seconds / 60) * 360;
+            const minutesDegrees = ((minutes + seconds/60) / 60) * 360;
+            const hoursDegrees = ((hours + minutes/60) / 12) * 360;
+            
+            secondHand.style.setProperty('--rotation', secondsDegrees);
+            minuteHand.style.setProperty('--rotation', minutesDegrees);
+            hourHand.style.setProperty('--rotation', hoursDegrees);
+
+            // Update background based on time
+            updateBackground(now.getHours());
+            
+            // Check alarm
+            checkAlarm(now);
+        }
+
+        function updateBackground(hour) {
+            let background;
+            if(hour >= 6 && hour < 12) {
+                background = 'linear-gradient(120deg, #87CEEB, #FFD700)'; // Morning
+            } else if(hour >= 12 && hour < 18) {
+                background = 'linear-gradient(120deg, #00BFFF, #FFFFFF)'; // Afternoon
+            } else if(hour >= 18 && hour < 21) {
+                background = 'linear-gradient(120deg, #FF4500, #483D8B)'; // Evening
+            } else {
+                background = 'linear-gradient(120deg, #00008B, #1A1A1A)'; // Night
+            }
+            body.style.background = background;
+        }
+
+        function setAlarm() {
+            const alarmTimeInput = document.getElementById('alarm-time');
+            alarmTime = alarmTimeInput.value;
+            alert(`Alarm set for ${alarmTime}`);
+        }
+
+        function checkAlarm(now) {
+            if(!alarmTime) return;
+            
+            const [alarmHours, alarmMinutes] = alarmTime.split(':');
+            const alarmDate = new Date();
+            alarmDate.setHours(alarmHours);
+            alarmDate.setMinutes(alarmMinutes);
+            alarmDate.setSeconds(0);
+            
+            if(now >= alarmDate && now < new Date(alarmDate.getTime() + 1000)) {
+                triggerAlarm();
+            }
+        }
+
+        function triggerAlarm() {
+            const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+            const oscillator = audioContext.createOscillator();
+            oscillator.type = 'square';
+            oscillator.frequency.setValueAtTime(440, audioContext.currentTime);
+            oscillator.connect(audioContext.destination);
+            oscillator.start();
+            
+            alarmTimeout = setTimeout(() => {
+                oscillator.stop();
+            }, 5000);
+        }
+
+        function stopAlarm() {
+            if(alarmTimeout) {
+                clearTimeout(alarmTimeout);
+                alarmTime = null;
+            }
+        }
+
+        // Update clock every second
+        setInterval(updateClock, 1000);
+        updateClock(); // Initial update
+    </script>
+</body>
+</html>
