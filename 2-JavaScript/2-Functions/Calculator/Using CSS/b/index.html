@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Calculator</title>
+</head>
+<body>
+    <div class="calculator">
+        <div id="hcd"></div>
+        <div class="button-row">
+            <button onclick="writeOperation(7)">7</button>
+            <button onclick="writeOperation(8)">8</button>
+            <button onclick="writeOperation(9)">9</button>
+            <button class="red" onclick="writeOperation('/')">/</button>
+        </div>
+        <div class="button-row">
+            <button onclick="writeOperation(4)">4</button>
+            <button onclick="writeOperation(5)">5</button>
+            <button onclick="writeOperation(6)">6</button>
+            <button class="red" onclick="writeOperation('*')">*</button>
+        </div>
+        <div class="button-row">
+            <button onclick="writeOperation(1)">1</button>
+            <button onclick="writeOperation(2)">2</button>
+            <button onclick="writeOperation(3)">3</button>
+            <button class="red" onclick="writeOperation('-')">-</button>
+        </div>
+        <div class="button-row">
+            <button onclick="writeOperation(0)">0</button>
+            <button class="red" onclick="clearAll()">AC</button>
+            <button class="red" onclick="lastValue()">C</button>
+            <button class="red" onclick="writeOperation('+')">+</button>
+        </div>
+        <div class="button-row">
+            <button class="red" onclick="performCalculation()">=</button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

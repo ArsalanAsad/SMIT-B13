@@ -81,6 +81,119 @@ console.clear()
 // newDiv.removeChild(pElement)
 
 
+10/02/2025
+
+// const newKey = "ABC"
+// const userKey = "myName"
+
+// const name = "Fareed"
+// const myObj = {
+//     name: "Abdullah",
+//     surname: "Motiwala",
+// getDate: () => {
+//     console.log(new Date())
+// }
+// }
+// const name = myObj.name
+// const surname = myObj.surname
+// const { name, surname } = myObj
+// console.log(name, "|", surname);
+
+// const myNewObj = {
+//     ...myObj,
+//     fname:"Fnaem"
+// name: myObj.name,
+// surname: myObj.surname,
+// fName: "Fname"
+// }
+// console.log(myNewObj)
+// const newObj = { a: myObj }
+// console.log(newObj, "===newObj")
+// delete myObj.name
+// myObj.userKey = "456"
+// myObj[userKey] = "789"
+// console.log(myObj["name"]);
+// console.log(myObj.name);
+
+// myObj.name = "New Name"
+// myObj["surname"] = "New SurName"
+
+// myObj.fName = "New FName"
+// myObj["MName"] = "New MName"
+
+// myObj.surname = 'N/A'
+// myObj[newKey] = "123"
+// myObj.newKey = newKey
+// console.log(myObj[newKey])
+
+// console.log(myObj, "===my");
+
+
+// console.log(myObj.name)
+// console.log(myObj.getDate())
+// console.log(myObj);
+
+// const userKey = prompt("Enter Your desire key")
+// const keyValue = prompt("Enter your value")
+
+// const user = { name: "Uzair", fname: "Farooq" }
+// const student = { name: user.name, fname: user.fname, rollNo: 59868 }
+// const instructor = { name: "Ahmed", ...user, timings: "6-9", }
+// delete instructor.fname
+// user[userKey] = keyValue
+// keyoverriding
+
+// const fname = user.fname
+// const name = user.name
+// const { fname, name } = user
+
+// console.log(student, instructor, "===user");
+
+function student(name, rollNo) {
+    const student = { name, rollNo:123 }
+    return "abc"
+}
+
+const a = student()
+// function greet() {
+//     console.log("Hello" + " " + this.name)
+// }
+// function Student(name, rollNo) {
+//     this.name = name
+//     this.rollNo = rollNo
+//     this.greet = greet
+// }
+// Student.prototype.greet = function () {
+//     console.log("Hello" + " " + this.name)
+// }
+
+// const student1 = new Student("abc", "123")
+// const student2 = new Student("abc", "123")
+
+// console.log(student1);
+// console.log(student2);
+
+// console.log(location.href)
+// console.log(location.hostname, "===hostname");
+// console.log(location.pathname);
+// console.log(location.hash, "===hash");
+// location.reload()
+
+
+
+// location.href = "https://google.com"
+
+// try {
+//     console.log("run before")
+//     console.log(a);
+//     console.log("run")
+//     // extra
+// } catch (err) {
+//     alert("Something went wrong")
+//     console.warn(err, "===err")
+// }
+// console.log("b")
+throw new Error("This is my error")
 
 
 
