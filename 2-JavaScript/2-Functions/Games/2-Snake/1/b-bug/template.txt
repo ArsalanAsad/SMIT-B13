@@ -1,0 +1,83 @@
+HTML
+
+<div id="game-wrapper">
+        Score : 5 , Name : Ahmed
+        <div id="game-area">
+            <div id="ball" class="point-ball"></div>
+            <div id="snake">
+                <div></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+
+CSS
+
+#game-area {
+    height: 95vh;
+    border: 1px solid;
+    position: relative;
+}
+
+.point-ball {
+    height: 25px;
+    width: 25px;
+    border-radius: 100%;
+    background-color: red;
+    position: absolute;
+}
+
+#snake {
+    height: 60px;
+    width: 30px;
+    border: 1px solid green;
+    background-color: green;
+    position: absolute;
+    bottom: 0;
+    animation: bottomToTop 3s ease-in-out;
+}
+
+@keyframes bottomToTop {
+    from {
+        bottom: 0;
+    }
+
+    to {
+        bottom: calc(100% - 90px);
+    }
+}
+
+#snake div {
+    width: 100%;
+    height: 30px;
+    background-color: gray;
+    border-radius: 2px;
+}
+
+JavaScript
+
+// const gameArea = document.getElementById("game-area")
+// const ball = document.getElementById("ball")
+// const ball = '<div class="point-ball"></div>'
+// gameArea.innerHTML = ball
+const ball = document.getElementById("ball")
+
+
+// function getRandomNumber(){}
+const getRandomNumber = () => {
+    const generatedRandomNumber = Math.random()
+    const expectedNumber = Math.floor(generatedRandomNumber * 96)
+    return expectedNumber
+}
+
+const popTheBall = () => {
+
+    const top = getRandomNumber()
+    const left = getRandomNumber()
+
+    ball.style.top = `${top}vh`
+    ball.style.left = `${left}vw`
+}
+
+popTheBall()

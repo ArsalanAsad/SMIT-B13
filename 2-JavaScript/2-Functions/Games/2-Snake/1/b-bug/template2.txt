@@ -1,0 +1,132 @@
+JavaScript
+
+const gameArea = document.getElementById("game-area")
+const snake = document.getElementById("snake")
+const ball = document.getElementById("ball")
+
+const moveTheSnake = (e) => {
+    const isRight = e.code === "ArrowRight"
+    const isUp = e.code === "ArrowUp"
+    const isDown = e.code === "ArrowDown"
+    const isLeft = e.code === "ArrowLeft"
+
+    const positionDetail = snake.getBoundingClientRect()
+    const yPosition = positionDetail.top + "px"
+    const xPosition = positionDetail.left + "px"
+
+    if (isRight) {
+        snake.style.removeProperty("left")
+        
+        snake.style.animationName = "leftToRight"
+        snake.style.top = yPosition
+        snake.style.setProperty("--current-position", xPosition)
+        snake.style.transform = "rotate(90deg)"
+    }
+
+    else if (isUp) {
+        snake.style.removeProperty("top")
+        snake.style.animationName = "bottomToTop"
+        snake.style.left = xPosition
+        snake.style.setProperty("--current-position", (window.innerHeight - positionDetail.top) + "px")
+        snake.style.transform = "rotate(0deg)"
+    }
+
+}
+gameArea.addEventListener('keydown', moveTheSnake)
+
+
+const getRandomNumber = () => {
+    const generatedRandomNumber = Math.random()
+    const expectedNumber = Math.floor(generatedRandomNumber * 96)
+    return expectedNumber
+}
+
+const popTheBall = () => {
+    const top = getRandomNumber()
+    const left = getRandomNumber()
+
+    ball.style.top = `${top}vh`
+    ball.style.left = `${left}vw`
+}
+
+popTheBall()
+
+
+CSS
+:root {
+    --current-position: 0
+}
+
+
+#game-area {
+    height: 95vh;
+    border: 1px solid;
+    position: relative;
+}
+
+.point-ball {
+    height: 25px;
+    width: 25px;
+    border-radius: 100%;
+    background-color: red;
+    position: absolute;
+}
+
+#snake {
+    height: 60px;
+    width: 30px;
+    border: 1px solid green;
+    background-color: green;
+    position: absolute;
+    bottom: 10px;
+    left: 120px;
+    /* transform: rotate(90deg); */
+    animation: bottomToTop 15s ease-in-out;
+}
+
+@keyframes bottomToTop {
+    from {
+        bottom: var(--current-position);
+    }
+
+    to {
+        bottom: calc(100% - 90px);
+    }
+}
+
+@keyframes topToBottom {
+    from {
+        top: 0;
+    }
+
+    to {
+        top: calc(100% - 90px);
+    }
+}
+
+@keyframes leftToRight {
+    from {
+        left: var(--current-position);
+    }
+
+    to {
+        left: calc(100% - 90px);
+    }
+}
+
+@keyframes rightToLeft {
+    from {
+        right: 0;
+    }
+
+    to {
+        right: calc(100% - 90px);
+    }
+}
+
+#snake div {
+    width: 100%;
+    height: 30px;
+    background-color: gray;
+    border-radius: 2px;
+}

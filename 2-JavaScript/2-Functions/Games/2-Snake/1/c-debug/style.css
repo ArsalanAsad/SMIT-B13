@@ -1,0 +1,68 @@
+:root {
+    --current-position: 0;
+}
+
+#game-area {
+    height: 95vh;
+    border: 2px solid;
+    position: relative;
+    outline: none; /* Ensures the game area can be focused */
+}
+
+.point-ball {
+    height: 25px;
+    width: 25px;
+    border-radius: 100%;
+    background-color: red;
+    position: absolute;
+}
+
+#snake {
+    position: absolute;
+    bottom: 10px;
+    left: 120px;
+}
+
+.snake-segment {
+    height: 20px;
+    width: 20px;
+    background-color: green;
+    position: absolute;
+    border-radius: 3px;
+}
+
+@keyframes bottomToTop {
+    from {
+        bottom: var(--current-position);
+    }
+    to {
+        bottom: calc(100% - 90px);
+    }
+}
+
+@keyframes topToBottom {
+    from {
+        top: 0;
+    }
+    to {
+        top: calc(100% - 90px);
+    }
+}
+
+@keyframes leftToRight {
+    from {
+        left: var(--current-position);
+    }
+    to {
+        left: calc(100% - 90px);
+    }
+}
+
+@keyframes rightToLeft {
+    from {
+        right: 0;
+    }
+    to {
+        right: calc(100% - 90px);
+    }
+}
