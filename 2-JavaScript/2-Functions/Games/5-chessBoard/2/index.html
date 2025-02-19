@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chessboard with Frame Labels</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .chessboard-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #fff;
+            border: 10px solid #000; /* Thick frame */
+            padding: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .row {
+            display: flex;
+            align-items: center;
+        }
+        .labels {
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+        }
+        .labels.vertical {
+            width: 30px; /* Width for vertical labels (numbers) */
+            height: 50px; /* Height for each row */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .labels.horizontal {
+            width: 50px; /* Width for horizontal labels (letters) */
+            height: 30px; /* Height for top/bottom labels */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #chessboard {
+            display: grid;
+            grid-template-columns: repeat(8, 50px);
+            grid-template-rows: repeat(8, 50px);
+            border: 2px solid #000;
+        }
+        .square {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+        }
+        .white {
+            background-color: #f0d9b5;
+        }
+        .black {
+            background-color: #b58863;
+        }
+    </style>
+</head>
+<body>
+    <div class="chessboard-container">
+        <!-- Top letters (A-H) -->
+        <div class="row">
+            <div class="labels horizontal"></div> <!-- Empty corner -->
+            <div class="labels horizontal">A</div>
+            <div class="labels horizontal">B</div>
+            <div class="labels horizontal">C</div>
+            <div class="labels horizontal">D</div>
+            <div class="labels horizontal">E</div>
+            <div class="labels horizontal">F</div>
+            <div class="labels horizontal">G</div>
+            <div class="labels horizontal">H</div>
+            <div class="labels horizontal"></div> <!-- Empty corner -->
+        </div>
+
+        <!-- Chessboard and side numbers -->
+        <div class="row">
+            <!-- Left numbers (8-1) -->
+            <div class="labels vertical">8</div>
+            <div class="labels vertical">7</div>
+            <div class="labels vertical">6</div>
+            <div class="labels vertical">5</div>
+            <div class="labels vertical">4</div>
+            <div class="labels vertical">3</div>
+            <div class="labels vertical">2</div>
+            <div class="labels vertical">1</div>
+            <!-- Chessboard -->
+            <div id="chessboard"></div>
+            <!-- Right numbers (8-1) -->
+            <div class="labels vertical">8</div>
+            <div class="labels vertical">7</div>
+            <div class="labels vertical">6</div>
+            <div class="labels vertical">5</div>
+            <div class="labels vertical">4</div>
+            <div class="labels vertical">3</div>
+            <div class="labels vertical">2</div>
+            <div class="labels vertical">1</div>
+        </div>
+
+        <!-- Bottom letters (A-H) -->
+        <div class="row">
+            <div class="labels horizontal"></div> <!-- Empty corner -->
+            <div class="labels horizontal">A</div>
+            <div class="labels horizontal">B</div>
+            <div class="labels horizontal">C</div>
+            <div class="labels horizontal">D</div>
+            <div class="labels horizontal">E</div>
+            <div class="labels horizontal">F</div>
+            <div class="labels horizontal">G</div>
+            <div class="labels horizontal">H</div>
+            <div class="labels horizontal"></div> <!-- Empty corner -->
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
