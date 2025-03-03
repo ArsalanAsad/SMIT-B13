@@ -139,8 +139,32 @@ let ourPromise = new Promise((res, rej) => {
 // })
 // console.log("Agay chla gya")
 
+
 console.log("A")
 setTimeout(() => {
     console.log("B")
 }, 0)
 console.log("C")
+
+console.log("a")
+setTimeout(() => { }, 2000)
+console.log("c")
+console.log("d")
+
+async function call() {
+    console.log("before")
+    const value = await ourPromise()
+    console.log(value)
+    console.log("after")
+}
+call()
+
+const promise = new Promise ((res, rej) => {
+    setTimeout(() => {
+        const data = { id: 1, name:"user" }
+        const err = { id: 1, name:null }
+        res(data)
+        rej(err)
+    }, 2000)
+}) 
+console.log(promise)
