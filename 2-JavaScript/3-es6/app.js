@@ -181,30 +181,76 @@
 //     console.log(data, ": finally")
 // })
 
-const getData = () => {
-    return new Promise((res, rej) => {
-        setTimeout(() => {
-            console.log("Function Calling..")
-            res("Promise resolved")
-        }, 2000)
-    })
-}
-async function foo() {
-         try {
-             console.log("A")
-              const data = await getData()
-              const data1 = await getData()
-              const data2 = await getData()
-              const [data1, data2, data3] = await Promise.all([getData(), getData(), getData()])
-              data[0],data[1],data[2]
-              const data1 = data[0]
-              const data2 = data[1]
-              const data3 = data[2]
-              console.log(data)
-              console.log("B")
-        } catch (error) {
-            console.log(error)
-        }
-     }
+// const getData = () => {
+//     return new Promise((res, rej) => {
+//         setTimeout(() => {
+//             console.log("Function Calling..")
+//             res("Promise resolved")
+//         }, 2000)
+//     })
+// }
+// async function foo() {
+//          try {
+//              console.log("A")
+//               const data = await getData()
+//               const data1 = await getData()
+//               const data2 = await getData()
+//               const [data1, data2, data3] = await Promise.all([getData(), getData(), getData()])
+//               data[0],data[1],data[2]
+//               const data1 = data[0]
+//               const data2 = data[1]
+//               const data3 = data[2]
+//               console.log(data)
+//               console.log("B")
+//         } catch (error) {
+//             console.log(error)
+//         }
+//      }
     
-     foo()
+//      foo()
+
+
+
+// function topLevel() {
+//     var a = 1
+//     var b = 2
+//     topLevel()
+// }
+
+// topLevel()
+
+// function factorial(n = 4) {
+//     //debugger
+//     if (n === 1) return 1
+//     return 4 * factorial(n - 1)
+// }
+
+
+
+
+
+
+// const result = factorial(4)
+// console.log(result)
+
+
+// function parent() {
+//     var a = 1
+//     function child() {
+//         console.log(a)
+//     } 
+
+//     return child
+// }
+
+// const childFunc = parent()
+// childFunc()
+
+
+// async function fetchResponse() {
+//     const response = await fetch('https://jsonplaceholder.typicode.com/todos/1')
+//     const data = await response.json()
+//     console.log( data, "===response")
+// }
+
+// fetchResponse()
