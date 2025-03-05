@@ -1,5 +1,5 @@
-const a = [1, 2, 3]
-const name = ['a', 'b', 'd', 'u', 'l', 'l', 'a', 'h']
+// const a = [1, 2, 3]
+// const name = ['a', 'b', 'd', 'u', 'l', 'l', 'a', 'h']
 // const b = [1, 2, 3]
 
 // const b = a.map((element, index, array) => {
@@ -30,12 +30,12 @@ const name = ['a', 'b', 'd', 'u', 'l', 'l', 'a', 'h']
 // console.log(a)
 
 
-const students = [
-    { id: 1, name: "Fareed", time: "6-9" },
-    { id: 2, name: "Ahsan", time: "8-9" },
-    { id: 3, name: "Ahsan", time: "8-9" },
-    { id: 3, name: "Rafeeq", time: "7-9" }
-]
+// const students = [
+//     { id: 1, name: "Fareed", time: "6-9" },
+//     { id: 2, name: "Ahsan", time: "8-9" },
+//     { id: 3, name: "Ahsan", time: "8-9" },
+//     { id: 3, name: "Rafeeq", time: "7-9" }
+// ]
 // const element = a.find(element => element === 1)
 // console.log(element)
 
@@ -54,48 +54,48 @@ const students = [
 
 // console.log(nameAray)
 
-const one = "1"
-const two = "2"
-console.log(one)
-console.log(two)
+// const one = "1"
+// const two = "2"
+// console.log(one)
+// console.log(two)
 // PROMISE
 // NORMAL FUNCTION
 
-console.clear()
+// console.clear()
 // setTimeout(() => {
 //     console.log("RUN")
 // },3000)
-function getWater(cb) {
-    let water = undefined
-    setTimeout(() => {
-        water = "adha kilo"
-        console.log(water, "===> water agya")
-        cb()
-    }, 3000)
-}
-function getSugar(cb) {
-    let sugar = undefined
-    setTimeout(() => {
-        sugar = "adha kilo"
-        console.log(sugar, "===> sugar agyi")
-        cb()
-    }, 3000)
-}
-function getDahi(cb) {
-    let dahi = undefined
-    setTimeout(() => {
-        dahi = "adha kilo"
-        console.log(dahi, "==> dahi agyi")
-        cb()
-    }, 3000)
-}
-function lassiBnao() {
-    let lassi = undefined
-    setTimeout(() => {
-        lassi = "1.75l"
-        console.log(lassi, "==> lassi bn gyi")
-    }, 3000)
-}
+// function getWater(cb) {
+//     let water = undefined
+//     setTimeout(() => {
+//         water = "adha kilo"
+//         console.log(water, "===> water agya")
+//         cb()
+//     }, 3000)
+// }
+// function getSugar(cb) {
+//     let sugar = undefined
+//     setTimeout(() => {
+//         sugar = "adha kilo"
+//         console.log(sugar, "===> sugar agyi")
+//         cb()
+//     }, 3000)
+// }
+// function getDahi(cb) {
+//     let dahi = undefined
+//     setTimeout(() => {
+//         dahi = "adha kilo"
+//         console.log(dahi, "==> dahi agyi")
+//         cb()
+//     }, 3000)
+// }
+// function lassiBnao() {
+//     let lassi = undefined
+//     setTimeout(() => {
+//         lassi = "1.75l"
+//         console.log(lassi, "==> lassi bn gyi")
+//     }, 3000)
+// }
 
 // getDahi(() => {
 //     getSugar(() => {
@@ -109,24 +109,24 @@ function lassiBnao() {
 //     })
 // })
 
-function getDahi(cb) {
-    let dahi = undefined
-    setTimeout(() => {
-        dahi = "adha kilo"
-        console.log(dahi, "==> dahi agyi")
-        cb()
-    }, 3000)
-}
-let ourPromise = new Promise((res, rej) => {
-    setTimeout(() => {
-        const a = 1;
-        if (a > 10) {
-            res("Promise is resolved")
-        } else {
-            rej("Promise is rejected")
-        }
-    }, 3000)
-})
+// function getDahi(cb) {
+//     let dahi = undefined
+//     setTimeout(() => {
+//         dahi = "adha kilo"
+//         console.log(dahi, "==> dahi agyi")
+//         cb()
+//     }, 3000)
+// }
+// let ourPromise = new Promise((res, rej) => {
+//     setTimeout(() => {
+//         const a = 1;
+//         if (a > 10) {
+//             res("Promise is resolved")
+//         } else {
+//             rej("Promise is rejected")
+//         }
+//     }, 3000)
+// })
 // console.log(ourPromise)
 // ourPromise.then((value) => {
 //     console.log(value, ": SUCCESS")
@@ -140,31 +140,71 @@ let ourPromise = new Promise((res, rej) => {
 // console.log("Agay chla gya")
 
 
-console.log("A")
-setTimeout(() => {
-    console.log("B")
-}, 0)
-console.log("C")
+// console.log("A")
+// setTimeout(() => {
+//     console.log("B")
+// }, 0)
+// console.log("C")
 
-console.log("a")
-setTimeout(() => { }, 2000)
-console.log("c")
-console.log("d")
+// console.log("a")
+// setTimeout(() => { }, 2000)
+// console.log("c")
+// console.log("d")
 
-async function call() {
-    console.log("before")
-    const value = await ourPromise()
-    console.log(value)
-    console.log("after")
+// async function call() {
+//     console.log("before")
+//     const value = await ourPromise()
+//     console.log(value)
+//     console.log("after")
+// }
+// call()
+
+// const promise = new Promise ((res, rej) => {
+//     setTimeout(() => {
+//         const data = { id: 1, name:"user" }
+//         const err = { id: 1, name:null }
+//         res(data)
+//         rej(err)
+//     }, 2000)
+// }) 
+// console.log(promise)
+
+// // // ********************************* //
+// // // promise
+// .then((data) => {
+//     console.log(data, ": data");
+// })
+// .catch((error) => {
+//     console.log(error, ": error");
+// })
+// .finally(() => {
+//     console.log(data, ": finally")
+// })
+
+const getData = () => {
+    return new Promise((res, rej) => {
+        setTimeout(() => {
+            console.log("Function Calling..")
+            res("Promise resolved")
+        }, 2000)
+    })
 }
-call()
-
-const promise = new Promise ((res, rej) => {
-    setTimeout(() => {
-        const data = { id: 1, name:"user" }
-        const err = { id: 1, name:null }
-        res(data)
-        rej(err)
-    }, 2000)
-}) 
-console.log(promise)
+async function foo() {
+         try {
+             console.log("A")
+              const data = await getData()
+              const data1 = await getData()
+              const data2 = await getData()
+              const [data1, data2, data3] = await Promise.all([getData(), getData(), getData()])
+              data[0],data[1],data[2]
+              const data1 = data[0]
+              const data2 = data[1]
+              const data3 = data[2]
+              console.log(data)
+              console.log("B")
+        } catch (error) {
+            console.log(error)
+        }
+     }
+    
+     foo()
