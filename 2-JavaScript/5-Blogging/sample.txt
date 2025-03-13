@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="click">Click Me</button>
+    <button id="click-2">Get Item</button>
+    <form action="">
+        Title: <input type="text" id="title">
+        Description: <input type="text" id="description">
+        Author Name<input type="text" id="author">
+        <button id="save-data" type="button">Save Data</button>
+    </form>
+
+    <script src="app.js"></script>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-app.js";
+        import { getFirestore, doc, setDoc } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-firestore.js";
+
+        const saveDataBtn = document.getElementById("save-data")
+
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyAFQI8gL7G3rC1ZKJCtep1Owd6uwLUiAso",
+            authDomain: "smit-13-test.firebaseapp.com",
+            projectId: "smit-13-test",
+            storageBucket: "smit-13-test.firebasestorage.app",
+            messagingSenderId: "833923891649",
+            appId: "1:833923891649:web:a8717788e7172a18ccaf40"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app)
+
+        const saveData = async () => {
+            // const docRef = doc(db, "cities", "LS")
+            // await setDoc(docRef, { name: "Los Angeleee" })
+            // alert("Document added successfully")
+            const title = document.querySelector("#title").value
+            const description = document.querySelector("#description").value
+            const author = document.querySelector("#author").value
+            const currentDate = new Date()
+            const id = Date.now()
+            const payload = {
+                title,
+                description,
+                author,
+                publishedAt: currentDate.toISOString()
+            }
+            const docRef = doc(db, "blogs", id.toString())
+            await setDoc(docRef, payload)
+            alert("Blog added successfully")
+        }
+
+        saveDataBtn.addEventListener("click", saveData)
+    </script>
+</body>
+
+</html>
+
+
+
+JS
+const clickButton = document.getElementById("click")
+clickButton.addEventListener("click", () => {
+    alert("clicked")
+    localStorage.setItem("user", { name: "abdullah" })
+})
+
+const click2Button = document.getElementById("click-2")
+click2Button.addEventListener("click", () => {
+    alert("clicked-2")
+    const user = localStorage.getItem("user")
+    console.log(user)
+})
+
+let numberOfStudents = 200
+// let shouldClassContinue = false
+// if (numberOfStudents > 200) shouldClassContinue = true
+
+// console.log(shouldClassContinue, "===numberOfStudents")
+const workEmail = "abc@smit.com"
+const personalEmail = "abc@gmail.com"
+
+// const shouldClassContinue = (numberOfStudents > 200) ? true : false
+// const isAllowed = shouldClassContinue && "Class in runıng"
+// const isRun = shouldClassContinue || "Class in runıng"
+// console.log(isAllowed)
+// const practicalPassed = true
+// const theoriticalMarks = 85
+// const sendEmailTo = workEmail || personalEmail
+// const isPassed = practicalPassed && theoriticalMarks
+// console.log(isPassed)
