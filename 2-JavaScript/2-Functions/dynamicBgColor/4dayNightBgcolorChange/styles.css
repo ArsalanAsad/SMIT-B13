@@ -1,0 +1,31 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 1s ease;
+}
+
+.content {
+    text-align: center;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.time-display {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.day {
+    background-color: #f7d71e; /* Yellow for day */
+}
+
+.night {
+    background-color: #0a0a12; /* Dark for night */
+}
