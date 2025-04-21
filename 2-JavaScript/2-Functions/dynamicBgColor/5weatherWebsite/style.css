@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tohoma, Geneva, Vardana, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
@@ -45,7 +45,7 @@ h1 {
 
 #search-btn {
     padding: 10px 20px;
-    border-color: #3498db;
+    background-color: #3498db;
     color: white;
     border: none;
     border-radius: 0 4px 4px 0;
@@ -74,6 +74,11 @@ h1 {
 }
 
 .weather-icon {
+    flex: 1;
+    text-align: right;
+}
+
+#weather-icon {
     font-size: 100px;
     color: #f39c12;
 }
@@ -103,7 +108,7 @@ h1 {
     background-color: white;
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 2px 10px rgba (0, 0, 0, 0.1);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .forecast h3 {
@@ -156,7 +161,7 @@ footer {
     margin-top: 30px;
     padding: 20px 0;
     border-top: 1px solid #ddd;
-    color: #7fec8d;
+    color: #7f8c8d;
 }
 
 @media (max-width: 768px) {
@@ -164,12 +169,12 @@ footer {
         flex-direction: column;
         text-align: center;
     }
-
+    
     .weather-icon {
         text-align: center;
         margin-top: 20px;
     }
-
+    
     .forecast-card {
         min-width: 100%;
         margin-bottom: 10px;
