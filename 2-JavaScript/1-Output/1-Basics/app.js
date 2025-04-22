@@ -741,3 +741,7 @@ function expandText () {
    const para = document.getElementById("text")
    para.innerText+=" test para"
 }
+
+function sayHello() {
+   alert("Hello from JavaScript!");
+ }
