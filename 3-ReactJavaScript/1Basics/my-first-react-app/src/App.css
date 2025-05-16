@@ -1,0 +1,67 @@
+/* App.css */
+
+.container {
+  text-align: center;
+  padding: 2rem;
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: #282c34;
+}
+
+h2 {
+  margin-top: 2rem;
+  font-size: 1.8rem;
+  color: #333;
+}
+
+p {
+  font-size: 1.2rem;
+}
+
+button {
+  padding: 10px 20px;
+  margin: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  border: none;
+  color: white;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+/* Style each button type */
+button.click-btn {
+  background-color: #61dafb;
+}
+
+button.click-btn:hover {
+  background-color: #4fb6e3;
+}
+
+button.reset-btn {
+  background-color: #ff4d4f;
+}
+
+button.reset-btn:hover {
+  background-color: #d9363e;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  button {
+    width: 80%;
+    max-width: 300px;
+  }
+}
