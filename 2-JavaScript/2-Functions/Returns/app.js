@@ -38,12 +38,56 @@
 
 // code here can NOT use carName
 
-function myFunction() {
-  let carName = "Volvo";
-  // code here CAN use carName
-  console.log(carName)
-}
-myFunction();
+// function myFunction() {
+//   let carName = "Volvo";
+//   // code here CAN use carName
+//   console.log(carName)
+// }
+// myFunction();
 
-let carName = "alto"
-console.log(carName)
+// let carName = "alto"
+// console.log(carName)
+
+// const user = { id: 42, name: "Alice" };
+// const { name: username } = user;
+// console.log(username)
+
+// const fruits = ["apple", "banana", "cherry"];
+// fruits.forEach((fruit, index) => {
+//   console.log(`${index}: ${fruit}`);
+// });
+
+// const obj1 = { a: 1, b: 2 };
+// const obj2 = { b: 3, c: 4 };
+// const merged = { ...obj1, ...obj2 };
+// console.log(merged);
+
+// const person = { name: "Bob", age: 40 };
+// for (let value of person) {
+//   console.log(value);
+// }
+
+// const obj = { val: 1 };
+
+// function modify(o) {
+//   o.val = 5;
+//   o = { val: 10 };
+// }
+
+// modify(obj);
+// console.log(obj.val);
+
+// const config = { theme: "dark" };
+// const { theme, layout = "grid" } = config;
+
+// console.log(theme, layout);
+
+const obj = {
+  "3": "three",
+  "1": "one",
+  "2": "two",
+  a: "A",
+  b: "B"
+};
+
+console.log(Object.keys(obj));
