@@ -66,3 +66,7 @@
 // document.getElementById("demo").innerHTML = myString;
 
 //JavaScript Object Constructors........................
+
+function changeText () {
+    document.getElementById('demo').innerHTML = "Hello Java";
+}
