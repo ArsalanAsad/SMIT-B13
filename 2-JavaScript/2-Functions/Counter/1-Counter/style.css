@@ -1,0 +1,57 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #768380, #ACB6E5);
+    font-family: 'Poppins' sans-serif;
+    margin: 0;
+}
+
+.container {
+    text-align: center;
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+#counter {
+    font-size: 60px;
+    margin: 0 20px;
+    color: #444;
+}
+
+.buttons button {
+    font-size: 20px;
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#decrease {
+    background-color: #ff6b6b;
+    color: white;
+}
+
+#increase {
+    background-color: #1dd1a1;
+    color: white;
+}
+
+#reset {
+    background-color: #576574;
+    color: white;
+}
+
+button:hover {
+    transform: scale(1.1);
+}
