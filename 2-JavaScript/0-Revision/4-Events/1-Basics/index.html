@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+</head>
+<body>
+    <!-- 2. mixed html and js -->
+    <button id="btn" class="btn">Click Me</button>
+
+    <!-- //1.HTML -->
+    <button onclick= "alert ('Clicked')">Click</button>
+
+
+    <!-- 4.Event flow -->
+     
+<!-- 4. Event Flow — Capturing & Bubbling
+
+When an event happens, it travels through the DOM in 3 phases:
+
+Capturing phase — goes from the window → document → outermost parent → target element
+
+Target phase — event reaches the target element
+
+Bubbling phase — event bubbles back up (target → parents → document → window) -->
+
+<div id="parent">
+    <button id="child">Click</button>
+</div>
+
+<!-- 
+5. Event Delegation advanced concept -->
+
+<ul id="menu">
+    <li>Home</li>
+    <li>About</li>
+    <li>Contact Us</li>
+</ul>
+
+    <script src="app.js"></script>
+</body>
+</html>
