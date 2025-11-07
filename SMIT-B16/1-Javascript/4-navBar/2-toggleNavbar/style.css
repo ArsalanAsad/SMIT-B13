@@ -1,0 +1,149 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #f0f6ff;
+}
+
+/* NAVBAR STYLES */
+nav {
+  background: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+
+.nav-center {
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1rem 0;
+}
+
+.nav-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.4rem;
+  letter-spacing: 1px;
+}
+.logo span {
+  color: #4aa3ff;
+}
+
+/* toggle button */
+.nav-toggle {
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  color: #4aa3ff;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+.nav-toggle:hover {
+  transform: rotate(90deg);
+}
+
+/* links */
+.nav-links {
+  list-style: none;
+  transition: all 0.3s ease;
+  height: 0;
+  overflow: hidden;
+}
+
+/* show links when toggled */
+.show-links {
+  height: 100vh;
+  background: white;
+  padding: 1rem 0;
+  width: 60%;
+  max-width: 300px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+}
+
+.nav-links li {
+  margin: 1rem 0;
+  margin-left: 1.5rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+.nav-links a:hover {
+  color: #4aa3ff;
+}
+
+/* social icons */
+.nav-icons {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+  margin-top: 2rem;
+  margin-left: 1.5rem;
+}
+.nav-icons a {
+  color: #4aa3ff;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+}
+.nav-icons a:hover {
+  color: #1a75ff;
+}
+
+/* main content */
+.content {
+  height: 100vh;
+  background: #f0f6ff;
+  margin-top: 70px;
+}
+
+/* Close (X) icon inside sidebar */
+.close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  color: red;
+  cursor: pointer;
+}
+
+/* Desktop view */
+@media screen and (min-width: 768px) {
+  .nav-toggle {
+    display: none;
+  }
+
+  .nav-links {
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .nav-links li {
+    margin: 0 1rem;
+  }
+
+  .nav-icons {
+    margin: 0;
+  }
+}
