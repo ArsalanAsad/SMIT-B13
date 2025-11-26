@@ -2,11 +2,11 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 body {
-  background-color: #eef6ff;
+  background: #eef6ff;
   padding: 30px;
 }
 
@@ -67,3 +67,31 @@ body {
   text-align: left;
 }
 
+.item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.item-title {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.item-price {
+  color: #e59a31;
+  font-weight: bold;
+}
+
+.item-text {
+  font-size: 14px;
+  margin-top: 5px;
+  color: #555;
+}
+
+@media(max-width: 600px){
+  .menu-item {
+    flex-direction: column;
+    text-align: center;
+  }
+}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feed</title>
+    <link rel="stylesheet" href="feed.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+
+<div id="toast-container"></div>
+
+<header class="feed-header">
+    <h1 id="welcome-message"></h1>
+    <button onclick="logout()" class="logout-btn">Logout</button>
+</header>
+
+<section class="post-area">
+    <textarea id="post-input" placeholder="What's happening?"></textarea>
+
+    <input type="url" id="image-url-input" placeholder="Image URL (optional)" class="img-input">
+
+    <input type="file" id="file-upload-input" accept="image/*" onchange="handlePostInput()">
+
+    <button id="post-btn" onclick="createPost()" disabled class="post-btn">Post</button>
+</section>
+
+<div id="feed-container"></div>
+
+<script src="feed.js"></script>
+</body>
+</html>
